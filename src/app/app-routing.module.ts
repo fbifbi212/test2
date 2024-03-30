@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { FormStep1Component } from './form/form.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'panel', component: AdminPanelComponent },
+  { path: '', component: FormStep1Component, pathMatch: 'full' }, // Anasayfa URL'si için yönlendirme
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
